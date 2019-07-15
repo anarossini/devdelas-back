@@ -5,18 +5,16 @@ const alunasModel = require('./AlunasSchema')
 connect()
 
 const add = (params) => {
-  if params.tipo == "ensinar"{
+
+  if (params.tipo == "ensinar") {
     const novaProfessora = new professorasModel(params)
     return novaProfessora.save()
-
-  }  if params.tipo == "aprender"{
-    const novaAluna = new AlunasModel(params)
+  } if (params.tipo == "aprender") {
+    const novaAluna = new alunasModel(params)
     return novaAluna.save()
- 
   }
 }
 
 module.exports = {
-  getAll,
   add
 }

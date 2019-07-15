@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 
 const alunasController = require('./AlunasController')
 const professorasController = require('./ProfessorasController')
+const userController = require('./UserController')
 
 const servidor = express()
 servidor.use(cors())
@@ -22,7 +23,7 @@ servidor.get('/professoras', async (request, response) => {
 })
 
 servidor.post('/users', async (request, response) => {
-  let user = await UserController.post(request.body)
+  let user = await userController.add(request.body)
 
   if (user){
     response.status(201).send(user)
