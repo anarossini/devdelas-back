@@ -3,18 +3,11 @@ const alunasModel = require('./AlunasSchema')
 
 connect()
 
-const getAll = async () => {
-  return alunasModel.find((error, alunas) => {
-    return alunas
-  })
-}
-
-const add = (aluna) => {
-  const novaAluna = new alunasModel(aluna)
-  return novaAluna.save()
+const getAll = () => {
+  let alunas = alunasModel.find({})
+  return alunas
 }
 
 module.exports = {
-  getAll,
-  add
+  getAll
 }

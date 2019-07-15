@@ -3,24 +3,11 @@ const professorasModel = require('./ProfessorasSchema')
 
 connect()
 
-const getAll = async () => {
-  let professoras = await professorasModel.find({}, (err, professoras)=>{
-  var userMap = {};
-  
-  users.forEach(function(user) {
-  userMap[user._id] =user;
-  });
-  return userMap
-  })
-
-}
-
-const add = (professora) => {
-  const novaProfessora = new professorasModel(professora)
-  return novaProfessora.save()
+const getAll = () => {
+  let professoras = professorasModel.find({})
+  return professoras
 }
 
 module.exports = {
-  getAll,
-  add
+  getAll
 }
