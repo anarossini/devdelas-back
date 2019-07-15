@@ -33,4 +33,4 @@ servidor.post('/users', async (request, response) => {
   }
 })
 
-servidor.listen(3000)
+servidor.listen(PORT)
